@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h2>日本語中訳反応テストその３</h2>
+<h2>日本語中訳反応テストその３（IDと第7問以降の問題に回答）</h2>
 
 <!-- ID -->
 <div id="consentSection">
@@ -56,27 +56,30 @@
 <input id="q1" style="width:200px;" required>
 
 <p>
-一番難しい（答えにくい）と感じたテストを中心に、具体的にどういう点が翻訳（アウトプット）の際に難しかったか、教えてください。
+一番難しい（答えにくい）と感じたテストを中心に、具体的にどういう点が翻訳（アウトプット）の際に難しかったか教えてください。
 </p>
 
 <textarea id="q2" style="width:400px; height:150px;" required></textarea>
 
+ <br>
+ <button id="submitSurvey">アンケート送信</button>
 <p>
-メールアドレス<br>
-※謝礼(Amazon eギフトカード)送信用です。回答データとは分けて管理しますのでご安心ください。不安な方はゼミの先生を通じてEメールアドレスをご連絡ください。
+謝礼送付用Eメールアドレス申告フォームへ（メールアドレスと回答内容とは別に収集していますので、ご安心ください。）<br>
+
+<a href="https://forms.office.com/r/kBy85RypeW">
+こちらをクリックして入力してください
+</a>
 </p>
 
-<input type="email" id="email"
-       style="width:300px;"
-       placeholder="example@email.com">
+<p style="color:red;">
+※謝礼を希望する方は、必ず上記フォームにも回答してください。
+</p>
 
-       <br><br>
-<button id="submitSurvey">送信</button>
-
+ <button id="submitSurvey">アンケート送信</button>
 </div>
 
 <script>
-const GAS_URL = "https://script.google.com/macros/s/AKfycbzMbuLhlKowHfr3jx9VffiiD3nl0LKlXXJowLs7z_uO8pnf9iGI_fLTk4wkt1y5ueRwjQ/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbyamOK85LIOfIkBHU5q57FeocTvDz4Q9ZnGohH04C_c3VqpQj2rLgbpBu4pf3cEP5Znpw/exec";
 const MAX_TIME = 25000;
 const RECORDING_MESSAGE = "音声再生終了後、自動的にレコーディングが始まります。必ずピッと音が鳴り「録音中」のマークが出てから発話を始め、終了後は「録音終了」ボタンを押してください。（ボタンを押さなくても、25秒で次の問題に自動的に切り替わります。）";
 const TEST_NUMBER = 3; // ← テスト1なら1
@@ -100,13 +103,7 @@ const qs = [
 
 {text:"【練習問題】1つ目の音声は練習です。\n与えられた日本語を中国語に訳しましょう。 \n練習：「日中大学生交流会で、あなたは中国人学生と知り合いになりました。相手に名前を尋ねてみましょう。」", audio:"https://www.dropbox.com/scl/fi/ku1qqyc2axnplvl9fv3kq/question3-0.mp3?rlkey=mcnqrmmx4o9whdxe0aa3xn7qc&raw=1", practice:true},
 
-  {text:"それでは本番です。\n与えられた日本語を中国語に訳しましょう。\n問題1：あなたは上海のホテルにチェックインしたばかりです。少し買い物をしたいので、ホテルのスタッフに、近くにコンビニ（便利店biànlìdiàn）があるか尋ねてみましょう。", audio:"https://www.dropbox.com/scl/fi/j05pr4kaytr37xi37aenm/question3-1.mp3?rlkey=vh0ycu0zdn2vuqzt9et1nrzue&raw=1"},
-  {text:"与えられた日本語を中国語に訳しましょう。\n問題2：あなたが道を歩いていると、中国人観光客と思しき人から道を中国語で尋ねられました。あなたは中国語よりも英語を話すほうがうまいので、できれば英語で道を教えたいです。相手に英語が話せるか尋ねてみましょう。", audio:"https://www.dropbox.com/scl/fi/y5rgrxqg5g466t8ryqzu6/question3-2.mp3?rlkey=qv4qsyy4ozlh0ir8jqisfa3yr&raw=1"},
-  {text:"与えられた日本語を中国語に訳しましょう。\n問題3：あなたは日本のとあるドラッグストアでバイトをしています。そこに中国人旅行客がやってきて免税申請をしようとしています。お客さんにパスポートの提示を求めましょう。", audio:"https://www.dropbox.com/scl/fi/ksl5ccylt8keper75ogfp/question3-3.mp3?rlkey=sb16to9dahsvwj0tw5r474yse&raw=1"},
-  {text:"与えられた日本語を中国語に訳しましょう。\n問題4：あなたは観光で宇治の平等院鳳凰堂に来ています。鳳凰堂の中では撮影禁止になっていますが、中国人観光客がそのことを知らずにスマホで撮影を始めました。そこが写真撮影禁止であることを伝えましょう。（写真撮影する＝拍照pāizhào）", audio:"https://www.dropbox.com/scl/fi/juht22priihdbo5xq9t2a/question3-4.mp3?rlkey=mos0immx3gmvalvkgff4o6v71&raw=1"},
-  {text:"与えられた日本語を中国語に訳しましょう。\n問題5：あなたの中国人の友達は、韓国のほうが日本よりも人口が多いと思っていましたが、実際には、日本のほうが韓国（韩国Hánguó）より人口が多いことを教えてあげましょう。", audio:"https://www.dropbox.com/scl/fi/dguc2gnrsitg3hs84p716/question3-5.mp3?rlkey=xckbbtzja3r2bgwoqgnphx2b7&raw=1"},
-  {text:"与えられた日本語を中国語に訳しましょう。\n問題6：あなたが自宅で朝食をとりながら天気予報を見ていると、今は天気がいいのに、午後から雨の予報となっていました。ちょうどあなたの家族が、傘を持たずに家を出ようとしていたので、今日の午後、雨が降ることを教えてあげましょう。", audio:"https://www.dropbox.com/scl/fi/i2w1gmm76slskasm2qcgk/question3-6.mp3?rlkey=oewehq72jv81j5b4jg4fbvs4z&raw=1"},
-  {text:"与えられた日本語を中国語に訳しましょう。\n問題7：あなたは中国から来た友達と食事をするため、渋谷にいます。ある店の前で、友達が「食事の後にこの店に寄ろう」というので、この店の閉店時間が夜8時だと教えてあげましょう。", audio:"https://www.dropbox.com/scl/fi/u25om1qbhbonml91rsoqb/question3-7.mp3?rlkey=ctilg7e1wifq6nbykzfc6ziqw&raw=1"},
+  {text:"それでは本番です。与えられた日本語を中国語に訳しましょう。\n問題7：あなたは中国から来た友達と食事をするため、渋谷にいます。ある店の前で、友達が「食事の後にこの店に寄ろう」というので、この店の閉店時間が夜8時だと教えてあげましょう。", audio:"https://www.dropbox.com/scl/fi/u25om1qbhbonml91rsoqb/question3-7.mp3?rlkey=ctilg7e1wifq6nbykzfc6ziqw&raw=1"},
   {text:"与えられた日本語を中国語に訳しましょう。\n問題8：あなたは一昨日、徹夜でレポートを書き、昨日は朝から夕方までバイトで、18時に帰宅したときには疲れ果ててソファで寝てしまいました。次の日、友達にその話をしながら、昨日は12時間寝たことを伝えましょう。", audio:"https://www.dropbox.com/scl/fi/lx173s1ymw002nrmo7x4f/question3-8.mp3?rlkey=jsmtccgay2v2t832fopv4dqgp&raw=1"},
   {text:"与えられた日本語を中国語に訳しましょう。\n問題9：あなたは友達とカフェにいます。店員さんが注文を取りに来ました。友達にコーヒーにするかお茶にするか尋ねてみましょう。", audio:"https://www.dropbox.com/scl/fi/4d3j6uskqt6gyo6v3zx47/question3-9.mp3?rlkey=fl66tkem4fzhchyw2vms3se6a&raw=1"},
   {text:"与えられた日本語を中国語に訳しましょう。\n問題10：あなたは駅で中国人の友達と待ち合わせをしていましたが、待ち合わせの時間に遅れたばかりか、ケータイを自宅に忘れてしまい、友達があなたにメッセージを送っても応答できませんでした。駅に着いたとき、ケータイ(手机shǒujī）を自宅に忘れてきてしまったと言い訳しましょう。", audio:"https://www.dropbox.com/scl/fi/d0sj7kzd1wdugjxji8q4l/question3-10.mp3?rlkey=xhqlyya52y4qmepbun0lcd57q&raw=1"}
@@ -161,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body: fd
     });
 
-    alert("これですべてのテストがおわりです。ご協力、ありがとうございました！");
+    alert("これですべてのテストが終わりです。ご協力、ありがとうございました！ページを閉じてください。");
   };
 
 });
@@ -221,7 +218,7 @@ function showQ() {
 
   audio.play().catch(err => {
     console.error(err);
-    alert("音声再生エラー");
+    alert("音声再生エラーあるいはネット環境が不安定です");
   });
 }
 // =======================
